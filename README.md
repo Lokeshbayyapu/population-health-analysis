@@ -1,55 +1,78 @@
-# Population Health Risk Analysis
+# Population Health Spending & Life Expectancy Analysis
 
 ## Business Question
-*Which patient populations are at highest risk for chronic disease progression, and what clinical and demographic factors drive preventable utilization?*
+*Which countries and demographic groups exhibit the greatest disparity between healthcare spending and life expectancy outcomes — and what drives spending inefficiency?*
 
-This project analyzes population-level health data to identify high-risk patient cohorts, supporting proactive care management and value-based care program design.
+This project analyzes global population health data across 170+ countries to identify where healthcare investment fails to translate into longer, healthier lives — informing value-based care strategy and resource allocation decisions.
 
 ---
 
 ## Why This Matters
-Preventable hospitalizations cost the U.S. healthcare system over $33B annually. Identifying at-risk populations early allows health plans, ACOs, and provider groups to intervene before high-cost events occur — directly impacting Stars ratings, HEDIS performance, and total cost of care.
+Global healthcare spending exceeds $8.5T annually, yet life expectancy varies by more than 30 years across countries with similar spending levels. Identifying spending inefficiency patterns is foundational to public health policy, ACO performance management, and value-based care program design.
 
 ---
 
 ## Key Findings
-- *High-risk cohorts* identified based on chronic condition burden, utilization patterns, and demographic factors
-- *Geographic concentration* of at-risk members reveals opportunities for targeted outreach programs
-- *Comorbidity clustering* shows strong correlation between diabetes, hypertension, and preventable ED visits
-- *Age and chronic condition count* are the strongest predictors of high-cost utilization
+- *Life expectancy gap of 20+ years* identified between high-spending and low-spending nations at similar income levels
+- *High-spending countries* do not consistently produce better life expectancy outcomes — revealing systemic inefficiency in care delivery
+- *Spending growth trend* shows accelerating per-capita costs without proportional life expectancy improvements over time
+- *Correlation analysis* confirms diminishing returns on healthcare spending beyond a threshold, particularly in high-income countries
+
+---
+
+## Python Analysis Highlights
+- Segmented countries into spending tiers using pandas quantile() and cut()
+- Ranked countries by spending-to-life expectancy efficiency ratio using groupby() and rank()
+- Built correlation analysis between per-capita spending and life expectancy using corr() and scatter visualizations
+- Performed multi-year trend analysis using pivot_table() and time-series aggregation
+
+---
+
+## Data Quality Challenges
+- Resolved inconsistent country name formats across WHO and World Bank datasets
+- Standardized spending metrics across different reporting years and population denominators
+- Handled missing life expectancy values using regional median imputation for 15+ countries
 
 ---
 
 ## Tools & Technologies
 | Layer | Tool |
 |---|---|
-| Data Processing | Python (pandas, numpy) |
-| Analysis | SQL, DAX |
+| Data Processing | Python (pandas, numpy, matplotlib, seaborn) |
+| Analysis | Python (Google Colab) |
 | Visualization | Tableau |
-| Data Source | CMS Public Health Dataset |
+| Data Source | WHO Global Health Expenditure Database / Our World in Data |
 
 ---
 
 ## Dashboard Features
-- Population risk segmentation by age, condition, and utilization
-- Geographic heat maps of high-risk member concentration
-- Chronic condition comorbidity analysis
-- Preventable utilization trends over time
+- Country-level spending vs. life expectancy scatter analysis
+- Spending efficiency ratio by region and income group
+- Multi-year spending trend visualization
+- Geographic heat map of life expectancy by country
 
 **[View Tableau Dashboard](https://public.tableau.com/app/profile/lokesh.reddy2043/viz/PopulationHealthAnalysis_17823656433670/Dashboard1)**
 
 ---
 
 ## Analytical Approach
-1. Ingested and cleaned population health dataset
-2. Segmented patients into risk tiers based on chronic condition burden and utilization history
-3. Built calculated fields for risk scoring, comorbidity index, and utilization rates
-4. Designed dashboard for both executive summary and care management drill-down
+1. Ingested and cleaned global health dataset (170+ countries, multiple years)
+2. Segmented countries into spending tiers and income groups
+3. Built spending efficiency ratio (life expectancy per $1,000 per capita spending)
+4. Designed dashboard for both executive summary and country-level drill-down
+
+---
+
+## Recommendations
+- Prioritize preventive care investment in high-spending, low-outcome regions
+- Benchmark low-cost, high-outcome countries as models for value-based care design
+- Redirect resources toward social determinants of health in countries with persistent life expectancy gaps
+- Monitor spending growth trends as early indicators of future inefficiency
 
 ---
 
 ## Domain Context
-This analysis applies concepts central to *HEDIS measure performance, **HCC risk adjustment, and **population health management* — areas where early identification of high-risk members directly impacts plan quality scores and member outcomes.
+This analysis applies concepts central to *population health management, **value-based care strategy, and **health economics* — areas where understanding the relationship between spending and outcomes directly impacts plan design, policy decisions, and member health.
 
 ---
 
