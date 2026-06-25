@@ -21,7 +21,7 @@ Analyzed healthcare spending and life expectancy trends across 6 major nations (
 - Healthcare Spending Trends Over Time
 
 ## Dashboards
-- Tableau Public: [Your Tableau Link Here]
+- Tableau Public: https://public.tableau.com/app/profile/lokesh.reddy2043/viz/PopulationHealthAnalysis_17823656433670/Dashboard1
 - GitHub: https://github.com/Lokeshbayyapu/population-health-analysis
 
 ## Data Source
